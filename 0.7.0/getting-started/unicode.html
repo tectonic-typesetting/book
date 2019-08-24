@@ -1,0 +1,319 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Use a Unicode Font - The Tectonic Typesetting System</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A manual for the Tectonic typesetting system">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Overview</a></li><li class="chapter-item expanded "><a href="../introduction/index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../getting-started/index.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../getting-started/install.html"><strong aria-hidden="true">2.1.</strong> Install Tectonic</a></li><li class="chapter-item expanded "><a href="../getting-started/first-document.html"><strong aria-hidden="true">2.2.</strong> Build Your First Document</a></li><li class="chapter-item expanded "><a href="../getting-started/unicode.html" class="active"><strong aria-hidden="true">2.3.</strong> Use a Unicode Font</a></li></ol></li><li class="chapter-item expanded "><a href="../lang-impl/index.html"><strong aria-hidden="true">3.</strong> The Tectonic Implementation of the TeX Language</a></li><li class="chapter-item expanded affix "><li class="part-title">“V2” Command-Line Interface</li><li class="chapter-item expanded "><a href="../v2cli/build.html"><strong aria-hidden="true">4.</strong> tectonic -X build</a></li><li class="chapter-item expanded "><a href="../v2cli/bundle.html"><strong aria-hidden="true">5.</strong> tectonic -X bundle</a></li><li class="chapter-item expanded "><a href="../v2cli/compile.html"><strong aria-hidden="true">6.</strong> tectonic -X compile</a></li><li class="chapter-item expanded "><a href="../v2cli/new.html"><strong aria-hidden="true">7.</strong> tectonic -X new</a></li><li class="chapter-item expanded "><a href="../v2cli/show.html"><strong aria-hidden="true">8.</strong> tectonic -X show</a></li><li class="chapter-item expanded "><a href="../v2cli/watch.html"><strong aria-hidden="true">9.</strong> tectonic -X watch</a></li><li class="chapter-item expanded affix "><li class="part-title">Concept Reference</li><li class="chapter-item expanded "><a href="../ref/documents.html"><strong aria-hidden="true">10.</strong> Documents</a></li><li class="chapter-item expanded "><a href="../ref/tectonic-toml.html"><strong aria-hidden="true">11.</strong> The Tectonic.toml File</a></li><li class="chapter-item expanded "><a href="../ref/v1cli.html"><strong aria-hidden="true">12.</strong> “V1” Command-Line Interface</a></li><li class="chapter-item expanded "><a href="../ref/v2cli.html"><strong aria-hidden="true">13.</strong> “V2” Command-Line Interface</a></li><li class="chapter-item expanded "><a href="../ref/workspaces.html"><strong aria-hidden="true">14.</strong> Workspaces</a></li><li class="chapter-item expanded affix "><li class="part-title">How-To Guides</li><li class="chapter-item expanded "><a href="../installation/index.html"><strong aria-hidden="true">15.</strong> Installing Tectonic</a></li><li class="chapter-item expanded "><a href="../howto/build-tectonic/index.html"><strong aria-hidden="true">16.</strong> Building Tectonic</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../howto/build-tectonic/external-dep-install.html"><strong aria-hidden="true">16.1.</strong> Install Dependencies Externally</a></li><li class="chapter-item expanded "><a href="../howto/build-tectonic/cargo-vcpkg-dep-install.html"><strong aria-hidden="true">16.2.</strong> Install Dependencies With cargo-vcpkg</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">The Tectonic Typesetting System</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        <a href="https://github.com/tectonic-typesetting/tectonic" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#getting-started-use-a-unicode-font" id="getting-started-use-a-unicode-font">Getting Started: Use a Unicode Font</a></h1>
+<p>You’ve <a href="./first-document.html">created your first Tectonic document</a>. Great! Now, let’s
+start exploring the ways in which Tectonic helps you create modern <a href="../introduction/index.html#technical-documents">technical
+documents</a>.</p>
+<p>We’ve already seen a few ways that Tectonic differs from traditional TeX
+engines. Perhaps the most fundamentally important difference, however, is the
+one that we’ll explore in this section.</p>
+<p><strong>Note:</strong> <em>This <a href="./index.html">Getting Started</a> guide uses what we call the <a href="../ref/v2cli.html">“V2”
+interface</a> to the Tectonic command-line tool. The V2 interface coexists
+with, but has a fairly different approach than, the <a href="../ref/v1cli.html">“V1”interface</a>. We
+are gradually migrating from V1 to V2. Neither interface (V1 or V2) is the same
+as the one exposed by classic TeX tools such as <code>pdflatex</code>.</em></p>
+<h2><a class="header" href="#unicode" id="unicode">Unicode</a></h2>
+<p>When TeX was first developed <a href="https://en.wikipedia.org/wiki/TeX#History">more than 40 years ago</a>, digital
+systems for representing human writing were pretty primitive. Because TeX needed
+to represent a variety of languages <em>and</em> mathematics, it was endowed with
+comparatively sophisticated tools to both accept and emit characters that aren’t
+found in standard English. TeX’s good multi-lingual support was one of the
+things that made it groundbreaking. Eventually, however, a consortium of major
+technology companies developed the much more comprehensive <a href="https://home.unicode.org/">Unicode</a> standards
+for representing the world’s writing systems digitally. By now, they’re
+universally adopted. So while the TeX ecosystem started out ahead of the curve,
+some of its core systems are designed around an incompatible and, frankly,
+dead-end framework.</p>
+<p>That is not to imply that the whole TeX universe is stuck in the past! Many
+people have worked extremely hard to bridge the worlds of TeX and Unicode. The
+code in Tectonic, in particular, is based on <a href="http://xetex.sourceforge.net/">XeTeX</a>, which adds Unicode support
+to the classic TeX experience. Without the efforts of the <a href="http://xetex.sourceforge.net/">XeTeX</a> team and many
+other dedicated volunteers in the TeX world, Tectonic wouldn’t be able to offer
+Unicode support.</p>
+<h2><a class="header" href="#modern-fonts" id="modern-fonts">Modern Fonts</a></h2>
+<p>Tectonic’s support for Unicode allows it to take advantage of modern fonts that
+are distributed using formats such as <a href="https://en.wikipedia.org/wiki/OpenType">OpenType</a>. Besides opening up access to a
+whole world of typographic progress — a good font is the result of <em>years</em> of
+expert effort — this support positions Tectonic to create outputs in not just
+<a href="https://en.wikipedia.org/wiki/PDF">PDF</a> but <a href="https://en.wikipedia.org/wiki/HTML">HTML</a> formats. HTML capability is still under development, but it’s
+one of the prime reasons that the Tectonic project was started.</p>
+<p>The choice of fonts is foundational to TeX’s document processing, so modern
+fonts aren’t automatically activated. To start using a nice new font like <a href="https://www.fontsquirrel.com/fonts/tex-gyre-pagella">TeX
+Gyre Pagella</a> (derived from <a href="https://en.wikipedia.org/wiki/Palatino">Palatino</a>), open up your
+<code>src/_preamble.tex</code> file and add the following lines after the <code>\documentclass</code>
+command:</p>
+<pre><code class="language-tex">\usepackage{fontspec}
+\setmainfont{texgyrepagella}[
+  Extension = .otf,
+  UprightFont = *-regular,
+  BoldFont = *-bold,
+  ItalicFont = *-italic,
+  BoldItalicFont = *-bolditalic,
+]
+</code></pre>
+<p>Now rebuild your document:</p>
+<pre><code class="language-sh">$ tectonic -X build
+</code></pre>
+<p>You’ll probably see Tectonic download some files: namely, the new font files
+that you have started using. Tectonic’s ability to fetch such files on the fly
+is why its installation is so much easier than a traditional TeX engine.</p>
+<p>If you open up your rebuilt document, it will be using your new font, although
+the difference can be difficult to detect with such a small amount of sample
+text.</p>
+<h2><a class="header" href="#unicode-input-text" id="unicode-input-text">Unicode Input Text</a></h2>
+<p>Tectonic’s support for Unicode broadens its <em>output</em> capabilities through the
+use of modern fonts. But that’s not all: Unicode also broadens Tectonic’s the
+<em>inputs</em> that Tectonic accepts.</p>
+<p>With Tectonic, you can type non-English characters directly into your input TeX
+files, which are parsed assuming the virtually-universal <a href="https://en.wikipedia.org/wiki/UTF-8">UTF-8 Unicode text
+encoding</a>. For instance, you can open up your <code>src/index.tex</code> file and
+copy-paste in the following <a href="https://en.wikipedia.org/wiki/Le_Bateau_ivre">verse</a> with accented characters:</p>
+<pre><code class="language-tex">Ô que ma quille éclate! Ô que j’aille à la mer!
+</code></pre>
+<p>Rebuild your document and see your new text in the output:</p>
+<pre><code class="language-sh">$ tectonic -X build
+</code></pre>
+<p><em>Whatever</em>, you might say. <em>I know how to get these accented characters with TeX
+commands:</em></p>
+<pre><code class="language-tex">\^O que ma quille \'eclate! \^O que j'aille \`a la mer!
+</code></pre>
+<p>Fair enough. But now try typing in <a href="https://www.japantimes.co.jp/news/2019/10/19/national/history/frog-jump-bashos-pond/">Bashô’s “old pond” haiku</a>:</p>
+<pre><code class="language-tex">古池や蛙飛び込む水の音
+  ふるいけやかわずとびこむみずのおと
+</code></pre>
+<p>We’ll wait.</p>
+<p>(Note, however, that if you copy-paste this text into our sample document, it
+won’t work: you haven’t activated a font able to handle the Japanese characters.
+You’ll get a lot of warnings to that effect.)</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../getting-started/first-document.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../lang-impl/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../getting-started/first-document.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../lang-impl/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
