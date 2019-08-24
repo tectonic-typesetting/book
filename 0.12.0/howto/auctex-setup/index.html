@@ -1,0 +1,320 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Use Tectonic with AucTeX - The Tectonic Typesetting System</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A manual for the Tectonic typesetting system">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../../favicon.png">
+        
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Overview</a></li><li class="chapter-item expanded "><a href="../../introduction/index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../../getting-started/index.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../getting-started/install.html"><strong aria-hidden="true">2.1.</strong> Install Tectonic</a></li><li class="chapter-item expanded "><a href="../../getting-started/first-document.html"><strong aria-hidden="true">2.2.</strong> Build Your First Document</a></li><li class="chapter-item expanded "><a href="../../getting-started/unicode.html"><strong aria-hidden="true">2.3.</strong> Use a Unicode Font</a></li></ol></li><li class="chapter-item expanded "><a href="../../lang-impl/index.html"><strong aria-hidden="true">3.</strong> The Tectonic Implementation of the TeX Language</a></li><li class="chapter-item expanded affix "><li class="part-title">“V2” Command-Line Interface</li><li class="chapter-item expanded "><a href="../../v2cli/build.html"><strong aria-hidden="true">4.</strong> tectonic -X build</a></li><li class="chapter-item expanded "><a href="../../v2cli/bundle.html"><strong aria-hidden="true">5.</strong> tectonic -X bundle</a></li><li class="chapter-item expanded "><a href="../../v2cli/compile.html"><strong aria-hidden="true">6.</strong> tectonic -X compile</a></li><li class="chapter-item expanded "><a href="../../v2cli/dump.html"><strong aria-hidden="true">7.</strong> tectonic -X dump</a></li><li class="chapter-item expanded "><a href="../../v2cli/new.html"><strong aria-hidden="true">8.</strong> tectonic -X new</a></li><li class="chapter-item expanded "><a href="../../v2cli/show.html"><strong aria-hidden="true">9.</strong> tectonic -X show</a></li><li class="chapter-item expanded "><a href="../../v2cli/watch.html"><strong aria-hidden="true">10.</strong> tectonic -X watch</a></li><li class="chapter-item expanded affix "><li class="part-title">Concept Reference</li><li class="chapter-item expanded "><a href="../../ref/documents.html"><strong aria-hidden="true">11.</strong> Documents</a></li><li class="chapter-item expanded "><a href="../../ref/tectonic-toml.html"><strong aria-hidden="true">12.</strong> The Tectonic.toml File</a></li><li class="chapter-item expanded "><a href="../../ref/v1cli.html"><strong aria-hidden="true">13.</strong> “V1” Command-Line Interface</a></li><li class="chapter-item expanded "><a href="../../ref/v2cli.html"><strong aria-hidden="true">14.</strong> “V2” Command-Line Interface</a></li><li class="chapter-item expanded "><a href="../../ref/workspaces.html"><strong aria-hidden="true">15.</strong> Workspaces</a></li><li class="chapter-item expanded affix "><li class="part-title">How-To Guides</li><li class="chapter-item expanded "><a href="../../installation/index.html"><strong aria-hidden="true">16.</strong> Installing Tectonic</a></li><li class="chapter-item expanded "><a href="../../howto/build-tectonic/index.html"><strong aria-hidden="true">17.</strong> Building Tectonic</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../howto/build-tectonic/external-dep-install.html"><strong aria-hidden="true">17.1.</strong> Install Dependencies Externally</a></li><li class="chapter-item expanded "><a href="../../howto/build-tectonic/cargo-vcpkg-dep-install.html"><strong aria-hidden="true">17.2.</strong> Install Dependencies With cargo-vcpkg</a></li></ol></li><li class="chapter-item expanded "><a href="../../howto/auctex-setup/index.html" class="active"><strong aria-hidden="true">18.</strong> Use Tectonic with AucTeX</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">The Tectonic Typesetting System</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        <a href="https://github.com/tectonic-typesetting/tectonic" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#how-to-use-tectonic-with-auctex" id="how-to-use-tectonic-with-auctex">How To: Use Tectonic with AucTeX</a></h1>
+<p>This section is a guide aimed at <a href="https://www.gnu.org/software/emacs/">GNU
+Emacs</a> users for setting up
+<a href="https://www.gnu.org/software/auctex/">AucTeX</a> with Tectonic as the TeX/LaTeX
+distribution.</p>
+<h2><a class="header" href="#basic-prerequisites" id="basic-prerequisites">Basic Prerequisites</a></h2>
+<p>To follow this section you will need Tectonic and GNU Emacs installed on your
+system. Additionally, you will require the AucTeX emacs package to be installed
+before following along.</p>
+<blockquote>
+<p>Note: This section makes use of the <a href="../../ref/v2cli.html">V2 tectonic CLI</a>,
+invoked using the <code>tectonic -X</code> flag or <code>nextonic</code> command alias.</p>
+</blockquote>
+<h2><a class="header" href="#setup" id="setup">Setup</a></h2>
+<p>All the code displayed in this section should go into your <code>init.el</code> file (or
+equivalent, such as <code>config.el</code> if you are using
+<a href="https://github.com/doomemacs/">Doomemacs</a>).</p>
+<p>First, load the AucTeX package.</p>
+<pre><code class="language-lisp">(require 'latex)
+</code></pre>
+<p>You will need to set the default TeX engine AucTeX uses to figure out the build
+commands to use Tectonic instead of traditional TeX distributions. Therefore we
+have to modify the <code>TeX-engine-alist</code> varible.</p>
+<ul>
+<li>The first element of the list is the symbol that AucTeX recognizes.</li>
+<li>The second element is a string with the name of the TeX distribution.</li>
+<li>The third element is the shell command for compiling plain TeX documents.</li>
+<li>The fourth element is the shell command for compiling LaTeX documents. Here we
+are assuming the user is using a Tectonic project (generated using <code>tectonic -X new &lt;proj-name&gt;</code>).</li>
+<li>The last element is the shell command for compiling ConTeXt documents, left
+unconfigured for now.</li>
+</ul>
+<pre><code class="language-lisp">(setq TeX-engine-alist '((default
+                          &quot;Tectonic&quot;
+                          &quot;tectonic -X compile -f plain %T&quot;
+                          &quot;tectonic -X watch&quot;
+                          nil)))
+</code></pre>
+<p>Next, modify the <code>LaTeX-command-style</code> so that AucTex doesn't add extra options
+to it that Tectonic does not recognize. We simply set it to the <code>%(latex)</code>
+expansion (from <code>TeX-expand-list-builtin</code>), removing any other extra options.</p>
+<pre><code class="language-lisp">(setq LaTeX-command-style '((&quot;&quot; &quot;%(latex)&quot;)))
+</code></pre>
+<p>We need to set the <code>TeX-check-TeX</code> variable to <code>nil</code> since AucTeX will try to
+find a traditional distibution like <code>TeXLive</code> or others, and will fail since
+Tectonic doesn't meet it's criteria.</p>
+<p>Additionally, we should also set <code>TeX-process-asynchronous</code> to <code>t</code>, so that
+running Tectonic in watch mode doesn't hang up Emacs.</p>
+<p>We'll also just ensure that the <code>TeX-engine</code> is set to <code>default</code>.</p>
+<pre><code class="language-lisp">(setq TeX-process-asynchronous t
+      TeX-check-TeX nil
+      TeX-engine 'default)
+</code></pre>
+<p>Finally, modify the <code>TeX-command-list</code> to use the appropriate commands, and not
+pass in extra metadata and options to Tectonic which cause it to error out. This
+needs to be done in place.</p>
+<pre><code class="language-lisp">(let ((tex-list (assoc &quot;TeX&quot; TeX-command-list))
+      (latex-list (assoc &quot;LaTeX&quot; TeX-command-list)))
+  (setf (cadr tex-list) &quot;%(tex)&quot;
+        (cadr latex-list) &quot;%l&quot;))
+</code></pre>
+<p>And that is all! You should now be able to</p>
+<ol>
+<li>Compile plain TeX files.</li>
+<li>Build Tectonic LaTeX projects in watch mode.</li>
+</ol>
+<h2><a class="header" href="#additional-configuration-and-usage-suggestions" id="additional-configuration-and-usage-suggestions">Additional Configuration and Usage Suggestions</a></h2>
+<h3><a class="header" href="#compile-latex-outside-a-tectonic-project" id="compile-latex-outside-a-tectonic-project">Compile LaTeX outside a Tectonic project</a></h3>
+<p>To do this, you can simply invoke <code>M-x TeX-command-master</code>, and the select the
+<code>Other</code> option, passing in the compile command <code>tectonic -X compile -f latex &lt;name of file&gt;</code>.</p>
+<blockquote>
+<p><strong>Caution</strong>: Compiling a document with multiple LaTeX files in this manner
+isn't extensively tested, as using a Tectonic project is the better way in
+that case. Any bug reports are welcome.</p>
+</blockquote>
+<h3><a class="header" href="#live-pdf-preview-in-tectonic-projects" id="live-pdf-preview-in-tectonic-projects">Live PDF Preview in Tectonic projects</a></h3>
+<p>AucTeX expects the output PDF after compiling to be in the same directory as the
+input file. So it will error out when that is not the case, since Tectonic
+places the output in a build directory.</p>
+<p>This behavior can be controlled by using the <code>TeX-output-dir</code> variable on a per
+project basis.</p>
+<p>This configuration assumes you are using <code>project.el</code>, although porting this
+code to <code>projectile.el</code> should be trivial.</p>
+<pre><code class="language-lisp">(add-hook 'after-change-major-mode-hook
+          (lambda ()
+            (when-let ((project (project-current))
+                       (proot (project-root project)))
+              (when (file-exists-p (expand-file-name &quot;Tectonic.toml&quot; proot))
+                (setq-local TeX-output-dir (expand-file-name &quot;build/index&quot; proot))))))
+</code></pre>
+<p>We are basically looking for <code>Tectonic.toml</code> file in the project root, and if it
+exists, setting the <code>TeX-output-dir</code> to the appropriate path to the build
+directory. You may replace the <code>&quot;build/index&quot;</code> path to wherever your PDF file is
+placed after it is generated by Tectonic.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../howto/build-tectonic/cargo-vcpkg-dep-install.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../howto/build-tectonic/cargo-vcpkg-dep-install.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
