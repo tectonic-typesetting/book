@@ -1,0 +1,343 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Installing Tectonic - The Tectonic Typesetting System</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A manual for the Tectonic typesetting system">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Overview</a></li><li class="chapter-item expanded "><a href="../introduction/index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../getting-started/index.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../getting-started/install.html"><strong aria-hidden="true">2.1.</strong> Install Tectonic</a></li><li class="chapter-item expanded "><a href="../getting-started/first-document.html"><strong aria-hidden="true">2.2.</strong> Build Your First Document</a></li><li class="chapter-item expanded "><a href="../getting-started/unicode.html"><strong aria-hidden="true">2.3.</strong> Use a Unicode Font</a></li></ol></li><li class="chapter-item expanded "><a href="../lang-impl/index.html"><strong aria-hidden="true">3.</strong> The Tectonic Implementation of the TeX Language</a></li><li class="chapter-item expanded affix "><li class="part-title">“V2” Command-Line Interface</li><li class="chapter-item expanded "><a href="../v2cli/build.html"><strong aria-hidden="true">4.</strong> tectonic -X build</a></li><li class="chapter-item expanded "><a href="../v2cli/bundle.html"><strong aria-hidden="true">5.</strong> tectonic -X bundle</a></li><li class="chapter-item expanded "><a href="../v2cli/compile.html"><strong aria-hidden="true">6.</strong> tectonic -X compile</a></li><li class="chapter-item expanded "><a href="../v2cli/dump.html"><strong aria-hidden="true">7.</strong> tectonic -X dump</a></li><li class="chapter-item expanded "><a href="../v2cli/init.html"><strong aria-hidden="true">8.</strong> tectonic -X init</a></li><li class="chapter-item expanded "><a href="../v2cli/new.html"><strong aria-hidden="true">9.</strong> tectonic -X new</a></li><li class="chapter-item expanded "><a href="../v2cli/show.html"><strong aria-hidden="true">10.</strong> tectonic -X show</a></li><li class="chapter-item expanded "><a href="../v2cli/watch.html"><strong aria-hidden="true">11.</strong> tectonic -X watch</a></li><li class="chapter-item expanded affix "><li class="part-title">Concept Reference</li><li class="chapter-item expanded "><a href="../ref/documents.html"><strong aria-hidden="true">12.</strong> Documents</a></li><li class="chapter-item expanded "><a href="../ref/tectonic-toml.html"><strong aria-hidden="true">13.</strong> The Tectonic.toml File</a></li><li class="chapter-item expanded "><a href="../ref/v1cli.html"><strong aria-hidden="true">14.</strong> “V1” Command-Line Interface</a></li><li class="chapter-item expanded "><a href="../ref/v2cli.html"><strong aria-hidden="true">15.</strong> “V2” Command-Line Interface</a></li><li class="chapter-item expanded "><a href="../ref/workspaces.html"><strong aria-hidden="true">16.</strong> Workspaces</a></li><li class="chapter-item expanded affix "><li class="part-title">How-To Guides</li><li class="chapter-item expanded "><a href="../installation/index.html" class="active"><strong aria-hidden="true">17.</strong> Installing Tectonic</a></li><li class="chapter-item expanded "><a href="../howto/build-tectonic/index.html"><strong aria-hidden="true">18.</strong> Building Tectonic</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../howto/build-tectonic/external-dep-install.html"><strong aria-hidden="true">18.1.</strong> Install Dependencies Externally</a></li><li class="chapter-item expanded "><a href="../howto/build-tectonic/cargo-vcpkg-dep-install.html"><strong aria-hidden="true">18.2.</strong> Install Dependencies With cargo-vcpkg</a></li></ol></li><li class="chapter-item expanded "><a href="../howto/auctex-setup/index.html"><strong aria-hidden="true">19.</strong> Use Tectonic with AucTeX</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">The Tectonic Typesetting System</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        <a href="https://github.com/tectonic-typesetting/tectonic" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#how-to-install-tectonic" id="how-to-install-tectonic">How To: Install Tectonic</a></h1>
+<p>One of the big advantages that Tectonic offers compared to the traditional TeX
+stack is that all of Tectonic’s functionality is delivered in a single
+executable file — not the usual tree of thousands of interlocking data files and
+binary tools.</p>
+<p>You have several options for obtaining the Tectonic executable. The best choice
+depends on your computing environment and your needs.</p>
+<ul>
+<li><strong>For the fastest and easiest installation, <a href="#copy-paste-a-terminal-command">copy-paste a command into your
+terminal</a></strong> that will automatically download
+the right Tectonic program for your computer</li>
+<li><a href="#direct-download">Direct download</a> a Tectonic release</li>
+<li><a href="#pre-built-binary-packages">Pre-built binary packages</a> for your favorite
+operating system or package manager</li>
+<li><a href="#compile-tectonic-yourself">Compile it yourself</a></li>
+</ul>
+<p>The <a href="#copy-paste-a-terminal-command">copy-paste method</a> should cover most use
+cases, but if you want better integration with your operating system or
+computing environment, <a href="#pre-built-binary-packages">packaged versions</a> might
+make more sense. There should be no need to compile Tectonic yourself unless you
+want to, or you’re hoping to run it on an unusual platform.</p>
+<h2><a class="header" href="#copy-paste-a-terminal-command" id="copy-paste-a-terminal-command">Copy-paste a terminal command</a></h2>
+<p>This is generally the easiest way to get Tectonic onto your computer. On a
+computer running a Unix-like operating system, including macOS, just run the
+following command in your terminal:</p>
+<pre><code class="language-sh">curl --proto '=https' --tlsv1.2 -fsSL https://drop-sh.fullyjustified.net |sh
+</code></pre>
+<p>This will download the <code>tectonic</code> program and place it into the directory where
+you ran the command.</p>
+<p>On Windows, you can do the same in a PowerShell window, which will unpack
+<code>tectonic.exe</code> for you:</p>
+<pre><code class="language-ps1">[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
+iex ((New-Object System.Net.WebClient).DownloadString('https://drop-ps1.fullyjustified.net'))
+</code></pre>
+<p>No matter your operating system, you should probably move the unpacked file into
+a directory in your executable search path so that you can run Tectonic from any
+working directory. For the time being, the download script doesn’t do this
+because it can be tricky to automatically determine what the best installation
+destination would be.</p>
+<h2><a class="header" href="#direct-download" id="direct-download">Direct download</a></h2>
+<p>You can <a href="https://tectonic-typesetting.github.io/latest.html">download the latest release of Tectonic here</a> on GitHub. Each
+release is published with precompiled executables attached. Because Tectonic is
+distributed as a single executable, all you need to do is download the
+appropriate archive for your platform and unpack it.</p>
+<p>For instance, on most Linux systems, you’ll want to download the file with the
+name looking like <code>tectonic-&lt;VERSION&gt;-x86_64-unknown-linux-gnu.tar.gz</code>. This
+tarball will unpack to a single file, <code>tectonic</code>, which is the Tectonic
+executable.</p>
+<h2><a class="header" href="#pre-built-binary-packages" id="pre-built-binary-packages">Pre-built binary packages</a></h2>
+<p>Tectonic may be available in precompiled packages offered by either your
+operating system or standalone package managers. Check out <a href="https://github.com/tectonic-typesetting/tectonic/#readme">the Tectonic source
+repository</a> for an up-to-date listing.</p>
+<p>In most cases, the package name will be <code>tectonic</code> and will provide a
+command-line tool also named <code>tectonic</code>.</p>
+<h3><a class="header" href="#pre-built-packages-for-anaconda" id="pre-built-packages-for-anaconda">Pre-built packages for (Ana)conda</a></h3>
+<p>Tectonic is available for the <a href="https://docs.conda.io/">Conda package manager</a>, which has the
+advantages of (1) not requiring any administrator privileges and (2) supporting
+Windows, macOS, and Linux. If you’d like to install Tectonic using a package
+manager and you’re not aware of a different option that’s a better fit for your
+needs, we recommend using Conda.</p>
+<p>If you don’t already have Conda installed, we recommend that you <a href="https://docs.conda.io/en/latest/miniconda.html">install the
+“Miniconda” package</a> provided by <a href="https://www.anaconda.com/">Anaconda, Inc.</a>. Once
+complete, the command <code>conda</code> will now be available in your terminal.</p>
+<p>Once the <code>conda</code> command is available, you can install Tectonic and its support
+libraries using <a href="http://conda-forge.github.io/">conda-forge</a>, a community-led
+Conda packaging project. To install Tectonic you must activate conda-forge,
+which can be done temporarily like so:</p>
+<pre><code class="language-sh">$ conda install -c conda-forge tectonic
+</code></pre>
+<h3><a class="header" href="#arch-linux" id="arch-linux">Arch Linux</a></h3>
+<p>For users of <a href="https://archlinux.org/">Arch Linux</a>, there are two Tectonic packages available: <a href="https://archlinux.org/packages/extra/x86_64/tectonic/">tectonic</a> from the official repositories, which can be installed with</p>
+<pre><code class="language-sh">$ sudo pacman -S tectonic
+</code></pre>
+<p>and <a href="https://aur.archlinux.org/packages/tectonic-git">tectonic-git</a> from the <a href="https://aur.archlinux.org/">AUR</a>.</p>
+<h3><a class="header" href="#homebrew" id="homebrew">Homebrew</a></h3>
+<p>There is a <code>tectonic</code> package in <a href="https://brew.sh/">Homebrew</a>. If you already
+have Homebrew installed, installing Tectonic should be as simple as:</p>
+<pre><code class="language-sh">$ brew install tectonic
+</code></pre>
+<p>We also have instructions about <a href="/howto/build-tectonic/external-dep-install.html#homebrew-on-macos">installing Tectonic’s dependencies using
+Homebrew</a> if you’d like to compile Tectonic yourself on your
+Homebrew-based computer.</p>
+<h3><a class="header" href="#macports" id="macports">MacPorts</a></h3>
+<p>There is a <code>tectonic</code> port in <a href="https://www.macports.org/">MacPorts</a>. If you
+already have MacPorts installed, installing Tectonic should be as simple as:</p>
+<pre><code class="language-sh">$ sudo port install tectonic
+</code></pre>
+<h3><a class="header" href="#nix-or-nixos" id="nix-or-nixos">nix or nixOS</a></h3>
+<p>If you’re using <a href="https://nixos.org/">nix</a>, you can imperatively install <a href="https://nixos.org/nixos/packages.html#tectonic"><code>tectonic</code></a> with:</p>
+<pre><code class="language-sh">$ nix-env -f '&lt;nixpkgs&gt;' -iA tectonic
+</code></pre>
+<p>in your shell. You can also create a temporary environment using
+<a href="https://nixos.org/nix/manual/#sec-nix-shell"><code>nix-shell</code></a>:</p>
+<pre><code class="language-sh">$ nix-shell '&lt;nixpkgs&gt;' -A tectonic
+</code></pre>
+<h3><a class="header" href="#void-linux" id="void-linux">Void Linux</a></h3>
+<p>Void Linux has a <code>tectonic</code> package in the <a href="https://github.com/void-linux/void-packages/blob/master/srcpkgs/tectonic/template">void-packages</a> repository. To
+install it, run:</p>
+<pre><code class="language-sh">$ sudo xbps-install -S tectonic
+</code></pre>
+<h2><a class="header" href="#compile-tectonic-yourself" id="compile-tectonic-yourself">Compile Tectonic Yourself</a></h2>
+<p>You can always compile Tectonic yourself. If your system has C++ and Rust
+compilers installed, this may be as simple as running:</p>
+<pre><code class="language-sh">$ cargo install tectonic
+</code></pre>
+<p>However, Tectonic requires various C/C++ support libraries that may not be
+available on your system by default. There are also various build options that
+you can turn on and off if you have more specialized needs. For all the details,
+consult the <a href="../howto/build-tectonic/index.html">How To Build Tectonic</a> guide.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../ref/workspaces.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../howto/build-tectonic/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../ref/workspaces.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../howto/build-tectonic/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
